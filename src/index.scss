@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css?family=Gaegu|PT+Sans|Sunflower:300');
+
+$web-box-color:white;
+$web-font-color:#333333;
+
+$web-title-color:rgb(150+random(50),150+random(50),150+random(55));
+
+body{
+  z-index: 1;
+  margin: 0 0;
+  font-size: 18px;
+  font-family:Sunflower;
+}
+
+//div{  border: 1px solid red;}
+
+
+p{
+  margin:0;
+  padding:0;
+}
+
+input{
+  margin-left: 5px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  
+}
+
+button{
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin:3px;
+  font-size: 16px;
+  background-color: $web-box-color;
+}
+
+button:hover{
+  border: 1px solid #eee;
+  background-color: #999;
+}
+
+.container{
+  display: flex-wrap;
+  flex-flow:column;
+  height:100vh;
+  padding: 0px;
+  background-color: $web-box-color;
+  color:$web-font-color;
+}
+
+.titleArea{
+  text-align: center;
+  height: 35px;
+  font-size: 20px;
+  //border: 1px solid red;
+}
+
+.indextitle{
+  font-family: Gaegu;
+  font-size: 30px;
+  color:$web-title-color;
+  margin:10px;
+}
+
+%box{
+  display: flex;
+  //flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width:100vw;
+  height:35px;
+}
+
+.navBox{
+  @extend %box;
+  flex-flow: column;
+  div{
+    //border: 1px solid red;
+  }
+  button{
+    color: white;
+    background-color: rgba(255,255,255,0);
+  }
+  button:hover{
+    background-color: rgba(255,255,255,0.1);
+  }
+}
+
+.viewstylebox{
+  @extend %box;
+  flex-flow: row;
+  height: 30px;
+    background-color: $web-title-color;
+}
+
+.thumbSliderBox{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.thumbSlider{
+  width:80px;
+  opacity: 0.7;
+}
+
+.userbox{
+   @extend %box;
+   justify-content: space-between;
+   position: absolute;
+   z-index: 2;
+   top:15px;
+   right: 10px;
+   width:95vw;
+   height: 30px;
+   color:black;
+   button{
+    color:black;
+   }
+   button:hover,div:hover{
+    color:gray;
+   }
+   //background-color: #666;
+}
+
+.userinfobox{
+  @extend %box;
+   justify-content: flex-end;
+   padding-right: 10px;
+}
+
+.userformbox{
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  top:25px;
+  right:5px;
+   text-align: left;
+   //width: 180px;
+   padding:0px 5px;
+   height:35px;
+   input{
+    width: 100px;
+    height: 22px
+    }
+   background-color: rgba(255,255,255,0.8);
+   border-radius: 3px;
+   border: 1px solid #ccc;
+}
+
+.post_heading{
+  text-align: right;
+  margin:5px;
+}
+
+
+//allpost
+.poolcontainer{
+  display: flex;
+  width:100%;
+  margin-top:10px;
+  justify-content: center;
+}
+
+
+//btn for meg & thumb view
+%btn{
+  button{
+    font-size: 10px;
+    color:white;
+    background-color: rgba(255,255,255,0.1);
+  }
+  button:hover{
+    color:gray;
+    background-color: rgba(255,255,255,0.9);
+  }
+}
+
+//meg view
+.megPostBox{
+  //width:100%;
+  height:80vh;
+  margin-top:2px;
+  padding:5px;
+  border: 1px solid #aaa;
+  background-size: cover;
+  background-position: center center;
+  background-color: #ccc;
+  color:white;
+  text-align: center;
+}
+
+.MEGStyle{
+  margin-left: 0;
+  width:100%;
+}
+
+.megPostblock{
+  margin:auto;
+  /*border:1px solid white;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items:center;
+  align-content: center;
+  align-self: flex-end;
+  width:60%;
+  height:90%;
+}
+.megtitle{
+  position: flex;
+  top: 100px;
+  text-align: center;
+  font-size: 30px;
+  color:rgba(255,255,255,1);
+  
+}
+.megtitle:hover{
+  color:rgba(255,255,255,1);
+  text-shadow: 0 0  1px #000000;
+}
+.megfuncbox{
+  margin-top: 5px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  @extend %btn;
+}
+
+//thumb view
+
+
+.THUMBStyle{
+  //width:350px;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding:5px;
+  min-height: 45vh;
+}
+
+.thumbPostBox{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width:200px;
+  height:200px;
+  margin:3px;
+  padding: 5px;
+  border: 5px solid white;
+  box-shadow: 1px 1px 3px #aaa;
+  border-radius: 3px;
+  color:green;
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center center;
+
+  text-align: center;
+  color:white;
+  @extend %btn;
+}
+
+.thumbPostTitle{
+  font-size: 24px;
+}
+
+
+//list
+.LISTStyle{
+  min-height: 75vh;
+}
+
+.listBox{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  width:80vw;
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.listline{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  width:80vw;
+  height: 30px;
+}
+
+.listTitle{
+  width:180px;
+}
+.listfunc{
+  width:120px;
+}
+
+//edit post dialog
+.darkBox{
+  z-index: 3;
+  position: fixed;
+  top:0px;
+  left:0px;
+  width: 1000px;
+  height: 1000px;
+  background-color: rgba(30,30,30,0.9);
+}
+
+.editPostBox{
+  z-index: 4;
+  position: fixed;
+  top:100px;
+  left:20%;
+  //display: flex;
+  //flex-direction: column;
+  padding:15px;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width:60vw;
+  
+}
+
+.close_Btn{
+  position: absolute;
+  top:0px;
+  right: 0px;
+  border: none;
+}
+
+
+
+.footer{
+  padding: 10px;
+  text-align: center;
+}
